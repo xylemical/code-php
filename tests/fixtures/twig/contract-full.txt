@@ -1,0 +1,19 @@
+
+/**
+ * test
+ */
+interface Code {
+
+    /**
+     * testing
+     */
+    protected $constant = tank;
+
+    /**
+     * Test
+     */
+    protected function method(Shorthand $abc = done): Shorthand {
+        tank
+    }
+
+}

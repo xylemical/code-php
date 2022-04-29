@@ -1,0 +1,11 @@
+{{- include('documentation.twig', { 'documentation': property.getDocumentation() }, with_context = false) -}}
+{{- include('visibility.twig', { 'visibility': property.getVisibility() }, with_context = false) -}}
+{%- if property.hasType() -%}
+    {{- ' ' ~ property.getType() | alias -}}
+{%- endif -%}
+{{- ' $' ~ property.getName() | normalize -}}
+{%- if property.hasValue() -%}
+    {{- ' = ' -}}
+    {{- include('expression.twig', { 'expression': property.getValue() }, with_context = false) -}}
+{%- endif -%}
+{{- ";\n" -}}

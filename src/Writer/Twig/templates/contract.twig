@@ -1,0 +1,23 @@
+{{- include('documentation.twig', { 'documentation': contract.getDocumentation() }, with_context = false) -}}
+interface {{ contract.getFullyQualifiedName() | name }}
+
+{%- if contract.hasContracts() -%}
+    {{- ' implements ' -}}
+    {%- for item in contract.getContracts() -%}
+        {%- if not loop.first %}{{ ', ' }}{% endif %}
+        {{- item.getFullyQualifiedName() | alias }}
+    {%- endfor -%}
+{%- endif -%}
+{{- " {\n" -}}
+
+{%- for constant in contract.getConstants() -%}
+    {%- if constant.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
+    {{- include('constant.twig', { 'constant': constant }, with_context = false) | indent(4) -}}
+{%- endfor -%}
+
+{%- for method in contract.getMethods() -%}
+    {%- if method.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
+    {{- include('method.twig', { 'method': method }, with_context = false) | indent(4) -}}
+{%- endfor -%}
+
+{{ "\n}" }}

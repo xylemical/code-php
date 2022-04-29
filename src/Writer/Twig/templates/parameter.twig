@@ -1,0 +1,6 @@
+{{- parameter.getType() | alias -}}
+{{- ' $' ~ parameter.getName() -}}
+{%- if parameter.hasValue() -%}
+    {{ ' = ' }}
+    {{- include('expression.twig', { 'expression': parameter.getValue() }, with_context = false) -}}
+{%- endif -%}

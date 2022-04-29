@@ -1,0 +1,26 @@
+
+/**
+ * test
+ */
+class Code implements Code {
+
+    use Code;
+
+    /**
+     * testing
+     */
+    protected $constant = tank;
+
+    /**
+     * Test
+     */
+    protected Shorthand $property = tank;
+
+    /**
+     * Test
+     */
+    protected function method(Shorthand $abc = done): Shorthand {
+        tank
+    }
+
+}

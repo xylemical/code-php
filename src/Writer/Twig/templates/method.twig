@@ -1,0 +1,20 @@
+{{- include('documentation.twig', { 'documentation': method.getDocumentation() }, with_context = false) -}}
+{{- include('visibility.twig', { 'visibility': method.getVisibility() }, with_context = false) -}}
+{{- ' function ' ~ method.getName() | normalize ~ '(' -}}
+{%- for parameter in method.getParameters() -%}
+    {%- if not loop.first -%}
+        {{ ', ' }}
+    {%- endif -%}
+    {{- include('parameter.twig', { 'parameter': parameter }, with_context = false) -}}
+{%- endfor -%}
+{{- ')' -}}
+{%- if method.hasType() -%}
+    {{- ': ' ~ method.getType() | alias | normalize -}}
+{%- endif -%}
+{% if method.hasValue() -%}
+    {{- " {\n    " -}}
+    {{- include('expression.twig', { 'expression': method.getValue() }, with_context = false) | indent(4) -}}
+    {{- "\n}\n" }}
+{%- else -%}
+    {{ ";\n" }}
+{%- endif %}

@@ -1,0 +1,34 @@
+{{- include('documentation.twig', { 'documentation': structure.getDocumentation() }, with_context = false) -}}
+class {{ structure.getFullyQualifiedName() | name -}}
+{%- if structure.hasContracts() -%}
+    {{- ' implements ' -}}
+    {%- for contract in structure.getContracts() -%}
+        {%- if not loop.first %}{{ ', ' }}{% endif %}
+        {{- contract.getFullyQualifiedName() | alias }}
+    {%- endfor -%}
+{%- endif -%}
+{{- " {\n" -}}
+
+{%- if structure.hasMixins() -%}
+    {{- "\n" -}}
+    {%- for mixin in structure.getMixins() -%}
+        {{- '    use ' ~ mixin.getFullyQualifiedName() | alias ~ ";\n" -}}
+    {%- endfor -%}
+{%- endif -%}
+
+{%- for constant in structure.getConstants() -%}
+    {%- if constant.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
+    {{- include('constant.twig', { 'constant': constant }, with_context = false) | indent(4) -}}
+{%- endfor -%}
+
+{%- for property in structure.getProperties() -%}
+    {%- if property.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
+    {{- include('property.twig', { 'property': property }, with_context = false) | indent(4) -}}
+{%- endfor -%}
+
+{%- for method in structure.getMethods() -%}
+    {%- if method.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
+    {{- include('method.twig', { 'method': method }, with_context = false) | indent(4) -}}
+{%- endfor -%}
+
+{{ "\n}" }}

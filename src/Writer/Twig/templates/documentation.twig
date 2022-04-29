@@ -1,0 +1,12 @@
+{%- if not documentation.isEmpty() %}
+
+/**
+{% for line in documentation.getContents() | split("\n") %}
+{% if line %}
+ * {{ line }}
+{% else %}
+ *
+{% endif %}
+{% endfor %}
+ */
+{% endif -%}

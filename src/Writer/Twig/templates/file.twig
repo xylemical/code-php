@@ -1,0 +1,20 @@
+<?php
+
+{% foreach structure in file.getStructures() %}
+namespace {{ structure.getName() | namespace }};
+
+{% foreach import in file.getImports() %}
+{% if import.hasShorthand() %}
+{{ include('import.php.twig', { 'import': import, 'type': import.getType() }, with_context = false) }}
+{% endif %}
+{% endfor %}
+
+{% if structure is contract %}
+{{ include('contract.php.twig', { 'structure': structure }, with_context = false) }}
+{% elseif structure is mixin %}
+{{ include('mixin.php.twig', { 'structure': structure }, with_context = false) }}
+{% else %}
+{{ include('structure.php.twig', { 'structure': structure }, with_context = false) }}
+{% endif %}
+
+{% endfor %}

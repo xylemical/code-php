@@ -1,0 +1,7 @@
+{% if visibility.getVisibility() == 2 -%}
+    private
+{%- elseif visibility.getVisibility() == 1 -%}
+    protected
+{%- else -%}
+    public
+{%- endif -%}

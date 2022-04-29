@@ -1,0 +1,7 @@
+
+/**
+ * Test
+ */
+protected function method(Shorthand $abc = done): Shorthand {
+    tank
+}

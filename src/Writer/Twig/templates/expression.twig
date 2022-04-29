@@ -1,0 +1,4 @@
+{%- set code = expression.getCode() -%}
+{%- if code.getLanguage() == 'php' -%}
+    {{- code.getContents() -}}
+{%- endif -%}
