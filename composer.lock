@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89e6460447be736cbe4aa25b42b84fe9",
+    "content-hash": "b64adf796fb4d1ba59594541b3dd247f",
     "packages": [
         {
             "name": "xylemical/code",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xylemical/code.git",
-                "reference": "f3412129a738d10056a27ca1aea190724baf518a"
+                "reference": "080f05e58be14821089057bece59d1f86e361f0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xylemical/code/zipball/f3412129a738d10056a27ca1aea190724baf518a",
-                "reference": "f3412129a738d10056a27ca1aea190724baf518a",
+                "url": "https://api.github.com/repos/xylemical/code/zipball/080f05e58be14821089057bece59d1f86e361f0c",
+                "reference": "080f05e58be14821089057bece59d1f86e361f0c",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
                 "issues": "https://github.com/xylemical/code/issues",
                 "source": "https://github.com/xylemical/code/tree/master"
             },
-            "time": "2022-03-29T20:00:21+00:00"
+            "time": "2022-04-25T23:16:00+00:00"
         },
         {
             "name": "xylemical/code-processor",
@@ -61,12 +61,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xylemical/code-processor.git",
-                "reference": "af0dd8dd897f05f0f33d107afc55eadcf21f084f"
+                "reference": "2f3446128fd21b5d30431a295459db77a35aff71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xylemical/code-processor/zipball/af0dd8dd897f05f0f33d107afc55eadcf21f084f",
-                "reference": "af0dd8dd897f05f0f33d107afc55eadcf21f084f",
+                "url": "https://api.github.com/repos/xylemical/code-processor/zipball/2f3446128fd21b5d30431a295459db77a35aff71",
+                "reference": "2f3446128fd21b5d30431a295459db77a35aff71",
                 "shasum": ""
             },
             "require": {
@@ -74,12 +74,7 @@
                 "xylemical/code": "dev-master"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-                "drupal/coder": "^8.3",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpstan/phpstan": "^0.12.48",
-                "phpunit/phpunit": "^9.3",
-                "squizlabs/php_codesniffer": "^3.5"
+                "xylemical/composer-dev-bundle": "^0.1.0"
             },
             "default-branch": true,
             "type": "library",
@@ -102,7 +97,7 @@
                 "issues": "https://github.com/xylemical/code-processor/issues",
                 "source": "https://github.com/xylemical/code-processor/tree/master"
             },
-            "time": "2022-03-29T16:30:02+00:00"
+            "time": "2022-04-26T10:39:47+00:00"
         },
         {
             "name": "xylemical/code-validator",
@@ -110,12 +105,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xylemical/code-validator.git",
-                "reference": "e8d28b4fe88f536631df25a397232462bd005cc0"
+                "reference": "8c7777d5d2667629b90dee482a08925ac401dd9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xylemical/code-validator/zipball/e8d28b4fe88f536631df25a397232462bd005cc0",
-                "reference": "e8d28b4fe88f536631df25a397232462bd005cc0",
+                "url": "https://api.github.com/repos/xylemical/code-validator/zipball/8c7777d5d2667629b90dee482a08925ac401dd9b",
+                "reference": "8c7777d5d2667629b90dee482a08925ac401dd9b",
                 "shasum": ""
             },
             "require": {
@@ -123,12 +118,7 @@
                 "xylemical/code": "dev-master"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-                "drupal/coder": "^8.3",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpstan/phpstan": "^0.12.48",
-                "phpunit/phpunit": "^9.3",
-                "squizlabs/php_codesniffer": "^3.5"
+                "xylemical/composer-dev-bundle": "^0.1.0"
             },
             "default-branch": true,
             "type": "library",
@@ -151,7 +141,7 @@
                 "issues": "https://github.com/xylemical/code-validator/issues",
                 "source": "https://github.com/xylemical/code-validator/tree/master"
             },
-            "time": "2022-03-29T16:27:56+00:00"
+            "time": "2022-04-26T10:40:23+00:00"
         }
     ],
     "packages-dev": [
@@ -344,6 +334,71 @@
                 "source": "https://www.drupal.org/project/coder"
             },
             "time": "2022-01-28T09:33:01+00:00"
+        },
+        {
+            "name": "jangregor/phpstan-prophecy",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jan0707/phpstan-prophecy.git",
+                "reference": "2bc7ca9460395690c6bf7332bdfb2f25d5cae8e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jan0707/phpstan-prophecy/zipball/2bc7ca9460395690c6bf7332bdfb2f25d5cae8e0",
+                "reference": "2bc7ca9460395690c6bf7332bdfb2f25d5cae8e0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0",
+                "phpstan/phpstan": "^1.0.0"
+            },
+            "conflict": {
+                "phpspec/prophecy": "<1.7.0,>=2.0.0",
+                "phpunit/phpunit": "<6.0.0,>=10.0.0"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.1.1",
+                "ergebnis/license": "^1.0.0",
+                "ergebnis/php-cs-fixer-config": "~2.2.0",
+                "phpspec/prophecy": "^1.7.0",
+                "phpunit/phpunit": "^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JanGregor\\Prophecy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Gregor Emge-Triebel",
+                    "email": "jan@jangregor.me"
+                }
+            ],
+            "description": "Provides a phpstan/phpstan extension for phpspec/prophecy",
+            "support": {
+                "issues": "https://github.com/Jan0707/phpstan-prophecy/issues",
+                "source": "https://github.com/Jan0707/phpstan-prophecy/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/localheinz",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-11-08T16:37:47+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -851,17 +906,62 @@
             "time": "2020-07-09T08:33:42+00:00"
         },
         {
-            "name": "phpstan/phpdoc-parser",
-            "version": "1.4.1",
+            "name": "phpstan/extension-installer",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "05333065c88f9518e08b094bdd10a4a9e538b2d4"
+                "url": "https://github.com/phpstan/extension-installer.git",
+                "reference": "66c7adc9dfa38b6b5838a9fb728b68a7d8348051"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/05333065c88f9518e08b094bdd10a4a9e538b2d4",
-                "reference": "05333065c88f9518e08b094bdd10a4a9e538b2d4",
+                "url": "https://api.github.com/repos/phpstan/extension-installer/zipball/66c7adc9dfa38b6b5838a9fb728b68a7d8348051",
+                "reference": "66c7adc9dfa38b6b5838a9fb728b68a7d8348051",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1 || ^2.0",
+                "php": "^7.1 || ^8.0",
+                "phpstan/phpstan": ">=0.11.6"
+            },
+            "require-dev": {
+                "composer/composer": "^1.8",
+                "phing/phing": "^2.16.3",
+                "php-parallel-lint/php-parallel-lint": "^1.2.0",
+                "phpstan/phpstan-strict-rules": "^0.11 || ^0.12"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "PHPStan\\ExtensionInstaller\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\ExtensionInstaller\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Composer plugin for automatic installation of PHPStan extensions",
+            "support": {
+                "issues": "https://github.com/phpstan/extension-installer/issues",
+                "source": "https://github.com/phpstan/extension-installer/tree/1.1.0"
+            },
+            "time": "2020-12-13T13:06:13+00:00"
+        },
+        {
+            "name": "phpstan/phpdoc-parser",
+            "version": "1.4.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpdoc-parser.git",
+                "reference": "129a63b3bc7caeb593c224c41f420675e63cfefc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/129a63b3bc7caeb593c224c41f420675e63cfefc",
+                "reference": "129a63b3bc7caeb593c224c41f420675e63cfefc",
                 "shasum": ""
             },
             "require": {
@@ -890,26 +990,26 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.4.1"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.4.5"
             },
-            "time": "2022-03-29T09:28:16+00:00"
+            "time": "2022-04-22T11:11:01+00:00"
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.99",
+            "version": "1.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "b4d40f1d759942f523be267a1bab6884f46ca3f7"
+                "reference": "6128620b98292e0b69ea6d799871d77163681c8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b4d40f1d759942f523be267a1bab6884f46ca3f7",
-                "reference": "b4d40f1d759942f523be267a1bab6884f46ca3f7",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/6128620b98292e0b69ea6d799871d77163681c8e",
+                "reference": "6128620b98292e0b69ea6d799871d77163681c8e",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1|^8.0"
+                "php": "^7.2|^8.0"
             },
             "conflict": {
                 "phpstan/phpstan-shim": "*"
@@ -919,11 +1019,6 @@
                 "phpstan.phar"
             ],
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.12-dev"
-                }
-            },
             "autoload": {
                 "files": [
                     "bootstrap.php"
@@ -936,7 +1031,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/0.12.99"
+                "source": "https://github.com/phpstan/phpstan/tree/1.6.3"
             },
             "funding": [
                 {
@@ -956,7 +1051,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-12T20:09:55+00:00"
+            "time": "2022-04-28T11:27:53+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1278,16 +1373,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.19",
+            "version": "9.5.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "35ea4b7f3acabb26f4bb640f8c30866c401da807"
+                "reference": "12bc8879fb65aef2138b26fc633cb1e3620cffba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/35ea4b7f3acabb26f4bb640f8c30866c401da807",
-                "reference": "35ea4b7f3acabb26f4bb640f8c30866c401da807",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/12bc8879fb65aef2138b26fc633cb1e3620cffba",
+                "reference": "12bc8879fb65aef2138b26fc633cb1e3620cffba",
                 "shasum": ""
             },
             "require": {
@@ -1365,7 +1460,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.19"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.20"
             },
             "funding": [
                 {
@@ -1377,7 +1472,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-15T09:57:31+00:00"
+            "time": "2022-04-01T12:37:26+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -1745,16 +1840,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "5.1.3",
+            "version": "5.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "388b6ced16caa751030f6a69e588299fa09200ac"
+                "reference": "1b5dff7bb151a4db11d49d90e5408e4e938270f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/388b6ced16caa751030f6a69e588299fa09200ac",
-                "reference": "388b6ced16caa751030f6a69e588299fa09200ac",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/1b5dff7bb151a4db11d49d90e5408e4e938270f7",
+                "reference": "1b5dff7bb151a4db11d49d90e5408e4e938270f7",
                 "shasum": ""
             },
             "require": {
@@ -1796,7 +1891,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/environment/issues",
-                "source": "https://github.com/sebastianbergmann/environment/tree/5.1.3"
+                "source": "https://github.com/sebastianbergmann/environment/tree/5.1.4"
             },
             "funding": [
                 {
@@ -1804,7 +1899,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-28T05:52:38+00:00"
+            "time": "2022-04-03T09:37:03+00:00"
         },
         {
             "name": "sebastian/exporter",
@@ -2804,16 +2899,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.3.9",
+            "version": "v3.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "6ff9b0e440fa66f97f207e181c41340ddfa5683d"
+                "reference": "8442df056c51b706793adf80a9fd363406dd3674"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6ff9b0e440fa66f97f207e181c41340ddfa5683d",
-                "reference": "6ff9b0e440fa66f97f207e181c41340ddfa5683d",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/8442df056c51b706793adf80a9fd363406dd3674",
+                "reference": "8442df056c51b706793adf80a9fd363406dd3674",
                 "shasum": ""
             },
             "require": {
@@ -2864,7 +2959,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.3.9"
+                "source": "https://github.com/twigphp/Twig/tree/v3.3.10"
             },
             "funding": [
                 {
@@ -2876,7 +2971,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-25T09:37:52+00:00"
+            "time": "2022-04-06T06:47:41+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -2942,12 +3037,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xylemical/code-writer-twig.git",
-                "reference": "1ca8e6b7f2aa6be710b881442207bca75008726d"
+                "reference": "50d01e31d359010bb525449a75cfc3c76bef5a71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xylemical/code-writer-twig/zipball/1ca8e6b7f2aa6be710b881442207bca75008726d",
-                "reference": "1ca8e6b7f2aa6be710b881442207bca75008726d",
+                "url": "https://api.github.com/repos/xylemical/code-writer-twig/zipball/50d01e31d359010bb525449a75cfc3c76bef5a71",
+                "reference": "50d01e31d359010bb525449a75cfc3c76bef5a71",
                 "shasum": ""
             },
             "require": {
@@ -2956,12 +3051,7 @@
                 "xylemical/code": "dev-master"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-                "drupal/coder": "^8.3",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpstan/phpstan": "^0.12.48",
-                "phpunit/phpunit": "^9.3",
-                "squizlabs/php_codesniffer": "^3.5"
+                "xylemical/composer-dev-bundle": "^0.1.0"
             },
             "default-branch": true,
             "type": "library",
@@ -2984,22 +3074,69 @@
                 "issues": "https://github.com/xylemical/code-writer-twig/issues",
                 "source": "https://github.com/xylemical/code-writer-twig/tree/master"
             },
-            "time": "2022-03-26T17:51:20+00:00"
+            "time": "2022-04-26T10:40:57+00:00"
+        },
+        {
+            "name": "xylemical/composer-dev-bundle",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xylemical/composer-dev-bundle.git",
+                "reference": "a3f0cc84c50a61a3960bfe2a4b448595fd8aa92c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xylemical/composer-dev-bundle/zipball/a3f0cc84c50a61a3960bfe2a4b448595fd8aa92c",
+                "reference": "a3f0cc84c50a61a3960bfe2a4b448595fd8aa92c",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": ">2.0",
+                "dealerdirect/phpcodesniffer-composer-installer": ">0.7.0",
+                "drupal/coder": ">8.3",
+                "jangregor/phpstan-prophecy": ">=1.0",
+                "php": ">7.4",
+                "phpspec/prophecy-phpunit": ">2.0",
+                "phpstan/extension-installer": ">=1.1",
+                "phpstan/phpstan": ">0.12.48",
+                "phpunit/phpunit": ">9.3",
+                "squizlabs/php_codesniffer": ">3.5"
+            },
+            "require-dev": {
+                "composer/composer": ">2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Xylemical\\Development\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Provides support for development.",
+            "homepage": "https://github.com/xylemical/composer-dev-bundle",
+            "support": {
+                "issues": "https://github.com/xylemical/composer-dev-bundle/issues",
+                "source": "https://github.com/xylemical/composer-dev-bundle/tree/0.1.2"
+            },
+            "time": "2022-04-26T12:07:25+00:00"
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "xylemical/code": 20,
         "xylemical/code-processor": 20,
         "xylemical/code-validator": 20,
         "xylemical/code-writer-twig": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">7.4"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

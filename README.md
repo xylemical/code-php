@@ -1,13 +1,13 @@
-# Code Writer
+# PHP Code Writer
 
-Simple writer of code structures. 
+Code writer for PHP. 
 
 ## Install
 
 The recommended way to install this library is [through composer](http://getcomposer.org).
 
 ```sh
-composer require xylemical/code-writer
+composer require xylemical/code-php
 ```
 
 ## Usage
