@@ -1,0 +1,80 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Test;
+
+use Code\Table as Table;
+use Code\Bar as CodeBar;
+use Faz as Faz1;
+
+/**
+ * test
+ */
+trait Code {
+
+    use Shorthand;
+
+    /**
+     * testing
+     */
+    protected const $constant = tank;
+
+    /**
+     * Test
+     */
+    protected CodeBar $property = tank;
+
+    /**
+     * Test
+     */
+    protected function method(Table $abc = done): Bar {
+        tank
+    }
+
+}
+
+/**
+ * test
+ */
+class Code extends Bar implements Faz1 {
+
+    use Faz;
+
+    /**
+     * testing
+     */
+    protected const $constant = tank;
+
+    /**
+     * Test
+     */
+    protected CodeBar $property = tank;
+
+    /**
+     * Test
+     */
+    protected function method(Table $abc = done): Bar {
+        tank
+    }
+
+}
+
+/**
+ * test
+ */
+interface Code {
+
+    /**
+     * testing
+     */
+    protected const $constant = tank;
+
+    /**
+     * Test
+     */
+    protected function method(Table $abc = done): Bar {
+        tank
+    }
+
+}

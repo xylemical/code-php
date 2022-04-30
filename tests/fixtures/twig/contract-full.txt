@@ -7,12 +7,12 @@ interface Code {
     /**
      * testing
      */
-    protected $constant = tank;
+    protected const $constant = tank;
 
     /**
      * Test
      */
-    protected function method(Shorthand $abc = done): Shorthand {
+    protected function method(Table $abc = done): Bar {
         tank
     }
 

@@ -2,24 +2,24 @@
 /**
  * test
  */
-class Code extends Bar implements Shorthand {
+class Code extends Bar implements Faz {
 
-    use Shorthand;
+    use Faz;
 
     /**
      * testing
      */
-    protected $constant = tank;
+    protected const $constant = tank;
 
     /**
      * Test
      */
-    protected Shorthand $property = tank;
+    protected Bar $property = tank;
 
     /**
      * Test
      */
-    protected function method(Shorthand $abc = done): Shorthand {
+    protected function method(Table $abc = done): Bar {
         tank
     }
 

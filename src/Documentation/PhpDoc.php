@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Xylemical\Code\Php\Documentation;
 
 use Xylemical\Code\DocumentationInterface;

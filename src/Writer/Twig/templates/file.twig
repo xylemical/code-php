@@ -1,20 +1,30 @@
-<?php
+{% set imports = file | imports %}
+{{- "<?php\n\ndeclare(strict_types=1);\n" -}}
 
-{% foreach structure in file.getStructures() %}
-namespace {{ structure.getName() | namespace }};
+{%- if file.getNamespace() -%}
+    {{- "\nnamespace " -}}{{- file.getNamespace() -}}{{- ";\n" -}}
+{%- endif -%}
 
-{% foreach import in file.getImports() %}
-{% if import.hasShorthand() %}
-{{ include('import.php.twig', { 'import': import, 'type': import.getType() }, with_context = false) }}
-{% endif %}
-{% endfor %}
+{%- if imports | length > 0 -%}
+    {{- "\n" -}}
+    {%- for import in file | imports %}
+        {{- 'use ' -}}{{- import | fqn -}}
+        {%- if import.getAlias() == import.getName() -%}
+            {{- ";\n" -}}
+        {%- else -%}
+            {{- ' as ' -}}{{- import | alias -}}{{- ";\n" -}}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
 
-{% if structure is contract %}
-{{ include('contract.php.twig', { 'structure': structure }, with_context = false) }}
-{% elseif structure is mixin %}
-{{ include('mixin.php.twig', { 'structure': structure }, with_context = false) }}
-{% else %}
-{{ include('structure.php.twig', { 'structure': structure }, with_context = false) }}
-{% endif %}
+{%- for structure in file.getStructures() -%}
 
-{% endfor %}
+    {%- if structure is contract -%}
+        {{- include('contract.twig', { 'contract': structure }, with_context = false) -}}
+    {%- elseif structure is mixin -%}
+        {{- include('mixin.twig', { 'mixin': structure }, with_context = false) -}}
+    {%- else -%}
+        {{- include('structure.twig', { 'structure': structure }, with_context = false) -}}
+    {%- endif -%}
+
+{%- endfor -%}

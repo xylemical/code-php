@@ -4,6 +4,8 @@ namespace Xylemical\Code\Php\Writer\Twig;
 
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
+use Xylemical\Code\Language;
+use Xylemical\Code\NameManager;
 use Xylemical\Code\Writer\TestWriterCase;
 use Xylemical\Code\Writer\Twig\TwigWriter;
 
@@ -25,6 +27,7 @@ class PhpTwigLoaderTest extends TestWriterCase {
 
     // Ensure the twig template engine works for all the different variables.
     foreach ($this->getSources($path) as $source => $destination) {
+      $manager = new NameManager(new Language());
       $result = $engine->write(include $source);
       $this->assertEquals(file_get_contents($destination), $result, 'Comparing ' . basename($source, '.inc'));
     }

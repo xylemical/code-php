@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Xylemical\Code\Php\Validator;
 
 use Xylemical\Code\Definition\ElementInterface;
@@ -62,11 +64,13 @@ class PhpNameValidator extends AbstractValidator {
    */
   public function validate(DefinitionInterface $definition): static {
     if ($definition instanceof StructureInterface) {
-      $names = $definition->getFullyQualifiedName()->getFullName();
-      $this->checkNames($definition, $names);
+      $separator = $definition->getFullyQualifiedName()->getSeparator();
+      $name = $definition->getFullyQualifiedName()->getFullName();
+      $this->checkNames($definition, $name, $separator);
     }
     elseif ($definition instanceof ElementInterface) {
-      $this->checkNames($definition, [$definition->getName()]);
+      // @todo This needs to be properly added to the elementInterface (separator).
+      $this->checkNames($definition, $definition->getName(), '\\');
     }
     return $this;
   }
@@ -76,11 +80,13 @@ class PhpNameValidator extends AbstractValidator {
    *
    * @param \Xylemical\Code\DefinitionInterface $definition
    *   The definition.
-   * @param array $names
+   * @param string $name
    *   The names.
+   * @param string $separator
+   *   The separator.
    */
-  protected function checkNames(DefinitionInterface $definition, array $names): void {
-    foreach ($names as $name) {
+  protected function checkNames(DefinitionInterface $definition, string $name, string $separator): void {
+    foreach (explode($separator ?: '\\', $name) as $name) {
       // Keyword check.
       if (in_array(strtolower($name), $this->keywords)) {
         $this->addError($definition, 'Name cannot be a keyword.');

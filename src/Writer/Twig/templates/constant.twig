@@ -1,4 +1,4 @@
 {{- include('documentation.twig', { 'documentation': constant.getDocumentation() }, with_context = false) -}}
 {{- include('visibility.twig', { 'visibility': constant.getVisibility() }, with_context = false) -}}
-{{- ' $' ~ constant.getName() | normalize ~ ' = ' -}}
+{{- ' const $' ~ constant.getName() | normalize ~ ' = ' -}}
 {{- include('expression.twig', { 'expression': constant.getValue() }, with_context = false) -}};

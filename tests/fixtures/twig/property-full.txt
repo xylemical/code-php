@@ -2,4 +2,4 @@
 /**
  * Test
  */
-protected Shorthand $property = tank;
+protected Bar $property = tank;

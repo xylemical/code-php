@@ -2,6 +2,6 @@
 /**
  * Test
  */
-protected function method(Shorthand $abc = done): Shorthand {
+protected function method(Table $abc = done): Bar {
     tank
 }

@@ -2,4 +2,4 @@
 /**
  * testing
  */
-protected $constant = tank;
+protected const $constant = tank;

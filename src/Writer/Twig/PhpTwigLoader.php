@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Xylemical\Code\Php\Writer\Twig;
 
 use Twig\Loader\FilesystemLoader;
