@@ -2,7 +2,7 @@
 /**
  * test
  */
-class Code implements Shorthand {
+class Code extends Bar implements Shorthand {
 
     use Shorthand;
 

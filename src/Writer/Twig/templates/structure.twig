@@ -1,8 +1,8 @@
 {{- include('documentation.twig', { 'documentation': structure.getDocumentation() }, with_context = false) -}}
 class {{ structure.getFullyQualifiedName() | name -}}
-{%- if structure.hasParent() -%}
+{%- if structure.getParent() -%}
     {{- ' extends ' -}}
-    {{ structure.getParent().getFullyQualifiedName() | alias }}
+    {{ structure.getParent() | alias }}
 {%- endif -%}
 
 {%- if structure.getContracts() | length > 0  -%}
