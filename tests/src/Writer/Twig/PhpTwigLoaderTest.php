@@ -7,9 +7,15 @@ use Twig\Extension\DebugExtension;
 use Xylemical\Code\Writer\TestWriterCase;
 use Xylemical\Code\Writer\Twig\TwigWriter;
 
+/**
+ * Tests \Xylemical\Code\Php\Writer\PhpTwigExtension.
+ */
 class PhpTwigLoaderTest extends TestWriterCase {
 
-  public function testTwigTemplateEngine() {
+  /**
+   * Tests templates.
+   */
+  public function testTwigTemplateEngine(): void {
     $path = realpath(__DIR__ . '/../../../fixtures/twig');
     $loader = new PhpTwigLoader();
     $twig = new Environment($loader, ['debug' => TRUE]);
@@ -23,4 +29,5 @@ class PhpTwigLoaderTest extends TestWriterCase {
       $this->assertEquals(file_get_contents($destination), $result, 'Comparing ' . basename($source, '.inc'));
     }
   }
+
 }

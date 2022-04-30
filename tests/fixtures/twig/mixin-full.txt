@@ -4,7 +4,7 @@
  */
 trait Code {
 
-    use Code;
+    use Shorthand;
 
     /**
      * testing

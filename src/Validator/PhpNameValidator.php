@@ -2,8 +2,9 @@
 
 namespace Xylemical\Code\Php\Validator;
 
+use Xylemical\Code\Definition\ElementInterface;
+use Xylemical\Code\Definition\StructureInterface;
 use Xylemical\Code\DefinitionInterface;
-use Xylemical\Code\FullyQualifiedNamedInterface;
 use Xylemical\Code\NamedInterface;
 use Xylemical\Code\Validator\AbstractValidator;
 
@@ -60,11 +61,11 @@ class PhpNameValidator extends AbstractValidator {
    * {@inheritdoc}
    */
   public function validate(DefinitionInterface $definition): static {
-    if ($definition instanceof FullyQualifiedNamedInterface) {
+    if ($definition instanceof StructureInterface) {
       $names = $definition->getFullyQualifiedName()->getFullName();
       $this->checkNames($definition, $names);
     }
-    else {
+    elseif ($definition instanceof ElementInterface) {
       $this->checkNames($definition, [$definition->getName()]);
     }
     return $this;

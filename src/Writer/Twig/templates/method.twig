@@ -8,10 +8,10 @@
     {{- include('parameter.twig', { 'parameter': parameter }, with_context = false) -}}
 {%- endfor -%}
 {{- ')' -}}
-{%- if method.hasType() -%}
+{%- if method.getType() -%}
     {{- ': ' ~ method.getType() | alias | normalize -}}
 {%- endif -%}
-{% if method.hasValue() -%}
+{% if method.getValue() -%}
     {{- " {\n    " -}}
     {{- include('expression.twig', { 'expression': method.getValue() }, with_context = false) | indent(4) -}}
     {{- "\n}\n" }}

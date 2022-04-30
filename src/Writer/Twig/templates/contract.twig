@@ -5,17 +5,17 @@ interface {{ contract.getFullyQualifiedName() | name }}
     {{- ' implements ' -}}
     {%- for item in contract.getContracts() -%}
         {%- if not loop.first %}{{ ', ' }}{% endif %}
-        {{- item.getFullyQualifiedName() | alias }}
+        {{- item | alias }}
     {%- endfor -%}
 {%- endif -%}
 {{- " {\n" -}}
 
-{%- for constant in contract.getConstants() -%}
+{%- for constant in contract.getElements() | constants -%}
     {%- if constant.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
     {{- include('constant.twig', { 'constant': constant }, with_context = false) | indent(4) -}}
 {%- endfor -%}
 
-{%- for method in contract.getMethods() -%}
+{%- for method in contract.getElements() | methods -%}
     {%- if method.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
     {{- include('method.twig', { 'method': method }, with_context = false) | indent(4) -}}
 {%- endfor -%}

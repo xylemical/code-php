@@ -1,24 +1,24 @@
 {{- include('documentation.twig', { 'documentation': mixin.getDocumentation() }, with_context = false) -}}
 trait {{ mixin.getFullyQualifiedName() | name }} {{- " {\n" -}}
 
-{%- if mixin.hasMixins() -%}
+{%- if mixin.getMixins() | length > 0 -%}
     {{- "\n" -}}
     {%- for item in mixin.getMixins() -%}
-        {{- '    use ' ~ item.getFullyQualifiedName() | alias ~ ";\n" -}}
+        {{- '    use ' ~ item | alias ~ ";\n" -}}
     {%- endfor -%}
 {%- endif -%}
 
-{%- for constant in mixin.getConstants() -%}
+{%- for constant in mixin.getElements() | constants -%}
     {%- if constant.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
     {{- include('constant.twig', { 'constant': constant }, with_context = false) | indent(4) -}}
 {%- endfor -%}
 
-{%- for property in mixin.getProperties() -%}
+{%- for property in mixin.getElements() | properties -%}
     {%- if property.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
     {{- include('property.twig', { 'property': property }, with_context = false) | indent(4) -}}
 {%- endfor -%}
 
-{%- for method in mixin.getMethods() -%}
+{%- for method in mixin.getElements() | methods -%}
     {%- if method.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
     {{- include('method.twig', { 'method': method }, with_context = false) | indent(4) -}}
 {%- endfor -%}

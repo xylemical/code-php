@@ -2,9 +2,9 @@
 /**
  * test
  */
-class Code implements Code {
+class Code implements Shorthand {
 
-    use Code;
+    use Shorthand;
 
     /**
      * testing

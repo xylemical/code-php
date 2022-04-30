@@ -12,26 +12,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xylemical/code.git",
-                "reference": "080f05e58be14821089057bece59d1f86e361f0c"
+                "reference": "bc25fdc860af9bc449b0e49266ee97c7c0172580"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xylemical/code/zipball/080f05e58be14821089057bece59d1f86e361f0c",
-                "reference": "080f05e58be14821089057bece59d1f86e361f0c",
+                "url": "https://api.github.com/repos/xylemical/code/zipball/bc25fdc860af9bc449b0e49266ee97c7c0172580",
+                "reference": "bc25fdc860af9bc449b0e49266ee97c7c0172580",
                 "shasum": ""
             },
             "require": {
                 "php": ">7.4"
             },
             "require-dev": {
-                "adlawson/vfs": "^0.12.1",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-                "drupal/coder": "^8.3",
-                "mikey179/vfsstream": "^1.6",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpstan/phpstan": "^0.12.48",
-                "phpunit/phpunit": "^9.3",
-                "squizlabs/php_codesniffer": "^3.5"
+                "xylemical/composer-dev-bundle": "^0.1.0"
             },
             "default-branch": true,
             "type": "library",
@@ -53,7 +46,7 @@
                 "issues": "https://github.com/xylemical/code/issues",
                 "source": "https://github.com/xylemical/code/tree/master"
             },
-            "time": "2022-04-25T23:16:00+00:00"
+            "time": "2022-04-30T06:14:37+00:00"
         },
         {
             "name": "xylemical/code-processor",
@@ -3037,12 +3030,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xylemical/code-writer-twig.git",
-                "reference": "50d01e31d359010bb525449a75cfc3c76bef5a71"
+                "reference": "c95e67d78081756d17118ea4e732a0b01a6b33d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xylemical/code-writer-twig/zipball/50d01e31d359010bb525449a75cfc3c76bef5a71",
-                "reference": "50d01e31d359010bb525449a75cfc3c76bef5a71",
+                "url": "https://api.github.com/repos/xylemical/code-writer-twig/zipball/c95e67d78081756d17118ea4e732a0b01a6b33d0",
+                "reference": "c95e67d78081756d17118ea4e732a0b01a6b33d0",
                 "shasum": ""
             },
             "require": {
@@ -3074,7 +3067,7 @@
                 "issues": "https://github.com/xylemical/code-writer-twig/issues",
                 "source": "https://github.com/xylemical/code-writer-twig/tree/master"
             },
-            "time": "2022-04-26T10:40:57+00:00"
+            "time": "2022-04-30T05:50:38+00:00"
         },
         {
             "name": "xylemical/composer-dev-bundle",
