@@ -15,6 +15,7 @@
             {{- ' as ' -}}{{- import | alias -}}{{- ";\n" -}}
         {%- endif -%}
     {%- endfor -%}
+    {{- "\n" -}}
 {%- endif -%}
 
 {%- for structure in file.getStructures() -%}
