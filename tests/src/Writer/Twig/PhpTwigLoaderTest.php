@@ -4,6 +4,9 @@ namespace Xylemical\Code\Php\Writer\Twig;
 
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
+use Xylemical\Code\Code;
+use Xylemical\Code\Definition\Method;
+use Xylemical\Code\Expression;
 use Xylemical\Code\Language;
 use Xylemical\Code\NameManager;
 use Xylemical\Code\Writer\TestWriterCase;
@@ -15,15 +18,25 @@ use Xylemical\Code\Writer\Twig\TwigWriter;
 class PhpTwigLoaderTest extends TestWriterCase {
 
   /**
-   * Tests templates.
+   * Get the twig rendering engine.
+   *
+   * @return \Xylemical\Code\Writer\Twig\TwigWriter
+   *   The engine.
    */
-  public function testTwigTemplateEngine(): void {
-    $path = realpath(__DIR__ . '/../../../fixtures/twig');
+  protected function getEngine(): TwigWriter {
     $loader = new PhpTwigLoader();
     $twig = new Environment($loader, ['debug' => TRUE]);
     $twig->addExtension(new DebugExtension());
     $twig->addExtension(new PhpTwigExtension());
-    $engine = new TwigWriter($twig);
+    return new TwigWriter($twig);
+  }
+
+  /**
+   * Tests templates.
+   */
+  public function testTwigTemplateEngine(): void {
+    $path = realpath(__DIR__ . '/../../../fixtures/twig');
+    $engine = $this->getEngine();
 
     // Ensure the twig template engine works for all the different variables.
     foreach ($this->getSources($path) as $source => $destination) {
@@ -31,6 +44,44 @@ class PhpTwigLoaderTest extends TestWriterCase {
       $result = $engine->write(include $source);
       $this->assertEquals(file_get_contents($destination), $result, 'Comparing ' . basename($source, '.inc'));
     }
+  }
+
+  /**
+   * Test expression with code outputs correctly.
+   *
+   */
+  public function testExpression(): void {
+    $engine = $this->getEngine();
+
+    $array = [
+      'Test' => 'Value',
+    ];
+    $expression = new Expression(new Code('php', var_export($array, true)));
+
+    $expected = "array (\n" .
+      "  'Test' => 'Value',\n" .
+      ")";
+    $this->assertEquals($expected, $engine->write($expression));
+  }
+
+  public function testMethod(): void {
+    $engine = $this->getEngine();
+    $manager = new NameManager(new Language());
+
+    $array = [
+      'Test' => 'Value',
+    ];
+    $expression = new Expression(new Code('php', var_export($array, true)));
+    $method = new Method('test', $manager);
+    $method->setvalue($expression);
+
+    $expected = "\npublic function test() {\n" .
+      "    array (\n" .
+      "      'Test' => 'Value',\n" .
+      "    )\n" .
+      "}\n";
+    $this->assertEquals($expected, $engine->write($method));
+
   }
 
 }

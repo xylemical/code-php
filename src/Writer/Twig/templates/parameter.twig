@@ -2,5 +2,5 @@
 {{- ' $' ~ parameter.getName() -}}
 {%- if parameter.getValue() -%}
     {{ ' = ' }}
-    {{- include('expression.twig', { 'expression': parameter.getValue() }, with_context = false) -}}
+    {{- include('expression.twig', { 'expression': parameter.getValue() }, with_context = false) | raw -}}
 {%- endif -%}

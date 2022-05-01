@@ -6,6 +6,6 @@
 {{- ' $' ~ property.getName() | normalize -}}
 {%- if property.getValue() -%}
     {{- ' = ' -}}
-    {{- include('expression.twig', { 'expression': property.getValue() }, with_context = false) -}}
+    {{- include('expression.twig', { 'expression': property.getValue() }, with_context = false) | raw -}}
 {%- endif -%}
 {{- ";\n" -}}
