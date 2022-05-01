@@ -23,17 +23,14 @@
     {%- endif -%}
 
     {%- for constant in structure.getElements() | constants -%}
-        {%- if constant.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
         {{- include('constant.twig', { 'constant': constant }, with_context = false) | indent(4) -}}
     {%- endfor -%}
 
     {%- for property in structure.getElements() | properties -%}
-        {%- if property.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
         {{- include('property.twig', { 'property': property }, with_context = false) | indent(4) -}}
     {%- endfor -%}
 
     {%- for method in structure.getElements() | methods -%}
-        {%- if method.getDocumentation().isEmpty() %}{{ '    ' }}{% endif -%}
         {{- include('method.twig', { 'method': method }, with_context = false) | indent(4) -}}
     {%- endfor -%}
 
