@@ -1,1 +1,1 @@
-public const $constant = tank;
+public const constant = tank;

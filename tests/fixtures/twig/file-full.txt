@@ -18,7 +18,7 @@ trait Code {
     /**
      * testing
      */
-    protected const $constant = tank;
+    protected const constant = tank;
 
     /**
      * Test
@@ -44,7 +44,7 @@ class Code extends Bar implements Faz1 {
     /**
      * testing
      */
-    protected const $constant = tank;
+    protected const constant = tank;
 
     /**
      * Test
@@ -68,7 +68,7 @@ interface Code {
     /**
      * testing
      */
-    protected const $constant = tank;
+    protected const constant = tank;
 
     /**
      * Test
