@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Test;
 
-use Code\Table as Table;
+use Code\Table;
 use Code\Bar as CodeBar;
 use Faz as Faz1;
 

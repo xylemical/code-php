@@ -9,7 +9,7 @@
     {{- "\n" -}}
     {%- for import in file | imports %}
         {{- 'use ' -}}{{- import | fqn -}}
-        {%- if import.getAlias() == import.getName() -%}
+        {%- if import | alias == import | name -%}
             {{- ";\n" -}}
         {%- else -%}
             {{- ' as ' -}}{{- import | alias -}}{{- ";\n" -}}
