@@ -48,7 +48,6 @@ class PhpTwigLoaderTest extends TestWriterCase {
 
   /**
    * Test expression with code outputs correctly.
-   *
    */
   public function testExpression(): void {
     $engine = $this->getEngine();
@@ -56,14 +55,20 @@ class PhpTwigLoaderTest extends TestWriterCase {
     $array = [
       'Test' => 'Value',
     ];
-    $expression = new Expression(new Code('php', var_export($array, true)));
+    $expression = new Expression(new Code('php', var_export($array, TRUE)));
 
-    $expected = "array (\n" .
-      "  'Test' => 'Value',\n" .
-      ")";
+    $expected = <<<EOF
+array (
+  'Test' => 'Value',
+)
+EOF;
+
     $this->assertEquals($expected, $engine->write($expression));
   }
 
+  /**
+   * Tests a method output.
+   */
   public function testMethod(): void {
     $engine = $this->getEngine();
     $manager = new NameManager(new Language());
@@ -71,15 +76,20 @@ class PhpTwigLoaderTest extends TestWriterCase {
     $array = [
       'Test' => 'Value',
     ];
-    $expression = new Expression(new Code('php', var_export($array, true)));
+    $expression = new Expression(new Code('php', var_export($array, TRUE)));
     $method = new Method('test', $manager);
     $method->setvalue($expression);
 
-    $expected = "\npublic function test() {\n" .
-      "    array (\n" .
-      "      'Test' => 'Value',\n" .
-      "    )\n" .
-      "}\n";
+    $expected = <<<EOF
+
+public function test() {
+    array (
+      'Test' => 'Value',
+    )
+}
+
+EOF;
+
     $this->assertEquals($expected, $engine->write($method));
 
   }

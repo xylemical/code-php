@@ -1,6 +1,8 @@
-{{- parameter.getType() | alias -}}
-{{- ' $' ~ parameter.getName() -}}
-{%- if parameter.getValue() -%}
-    {{ ' = ' }}
-    {{- include('expression.twig', { 'expression': parameter.getValue() }, with_context = false) | raw -}}
-{%- endif -%}
+{%- autoescape false -%}
+    {{- parameter.getType() | alias -}}
+    {{- ' $' ~ parameter.getName() -}}
+    {%- if parameter.getValue() -%}
+        {{ ' = ' }}
+        {{- include('expression.twig', { 'expression': parameter.getValue() }, with_context = false) -}}
+    {%- endif -%}
+{%- endautoescape -%}

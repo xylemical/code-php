@@ -1,14 +1,15 @@
-{%- if not documentation.isEmpty() %}
-
-/**
-{% for line in documentation.getContents() | split("\n") %}
-{% if line %}
- * {{ line }}
-{% else %}
- *
-{% endif %}
-{% endfor %}
- */
-{% else %}
-
-{% endif -%}
+{%- autoescape false -%}
+    {%- if not documentation.isEmpty() %}
+        {{- "\n/**\n" -}}
+        {%- for line in documentation.getContents() | split("\n") -%}
+            {%- if line -%}
+                {{ " * " ~ line ~ "\n" }}
+            {%- else -%}
+                {{ " *\n" }}
+            {%- endif -%}
+        {%- endfor -%}
+        {{- " */\n" -}}
+    {% else %}
+        {{- "\n" -}}
+    {% endif -%}
+{%- endautoescape -%}

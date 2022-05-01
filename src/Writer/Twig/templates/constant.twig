@@ -1,4 +1,7 @@
-{{- include('documentation.twig', { 'documentation': constant.getDocumentation() }, with_context = false) -}}
-{{- include('visibility.twig', { 'visibility': constant.getVisibility() }, with_context = false) -}}
-{{- ' const ' ~ constant.getName() | normalize ~ ' = ' -}}
-{{- include('expression.twig', { 'expression': constant.getValue() }, with_context = false) | raw -}};
+{%- autoescape false -%}
+    {{- include('documentation.twig', { 'documentation': constant.getDocumentation() }, with_context = false) -}}
+    {{- include('visibility.twig', { 'visibility': constant.getVisibility() }, with_context = false) -}}
+    {{- ' const ' ~ constant.getName() | normalize ~ ' = ' -}}
+    {{- include('expression.twig', { 'expression': constant.getValue() }, with_context = false) -}}
+    {{- ";\n" -}}
+{%- endautoescape -%}

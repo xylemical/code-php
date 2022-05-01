@@ -1,31 +1,33 @@
-{% set imports = file | imports %}
-{{- "<?php\n\ndeclare(strict_types=1);\n" -}}
+{%- autoescape false -%}
+    {% set imports = file | imports %}
+    {{- "<?php\n\ndeclare(strict_types=1);\n" -}}
 
-{%- if file.getNamespace() -%}
-    {{- "\nnamespace " -}}{{- file.getNamespace() -}}{{- ";\n" -}}
-{%- endif -%}
-
-{%- if imports | length > 0 -%}
-    {{- "\n" -}}
-    {%- for import in file | imports %}
-        {{- 'use ' -}}{{- import | fqn -}}
-        {%- if import | alias == import | name -%}
-            {{- ";\n" -}}
-        {%- else -%}
-            {{- ' as ' -}}{{- import | alias -}}{{- ";\n" -}}
-        {%- endif -%}
-    {%- endfor -%}
-    {{- "\n" -}}
-{%- endif -%}
-
-{%- for structure in file.getStructures() -%}
-
-    {%- if structure is contract -%}
-        {{- include('contract.twig', { 'contract': structure }, with_context = false) -}}
-    {%- elseif structure is mixin -%}
-        {{- include('mixin.twig', { 'mixin': structure }, with_context = false) -}}
-    {%- else -%}
-        {{- include('structure.twig', { 'structure': structure }, with_context = false) -}}
+    {%- if file.getNamespace() -%}
+        {{- "\nnamespace " -}}{{- file.getNamespace() -}}{{- ";\n" -}}
     {%- endif -%}
 
-{%- endfor -%}
+    {%- if imports | length > 0 -%}
+        {{- "\n" -}}
+        {%- for import in file | imports %}
+            {{- 'use ' -}}{{- import | fqn -}}
+            {%- if import | alias == import | name -%}
+                {{- ";\n" -}}
+            {%- else -%}
+                {{- ' as ' -}}{{- import | alias -}}{{- ";\n" -}}
+            {%- endif -%}
+        {%- endfor -%}
+        {{- "\n" -}}
+    {%- endif -%}
+
+    {%- for structure in file.getStructures() -%}
+
+        {%- if structure is contract -%}
+            {{- include('contract.twig', { 'contract': structure }, with_context = false) -}}
+        {%- elseif structure is mixin -%}
+            {{- include('mixin.twig', { 'mixin': structure }, with_context = false) -}}
+        {%- else -%}
+            {{- include('structure.twig', { 'structure': structure }, with_context = false) -}}
+        {%- endif -%}
+
+    {%- endfor -%}
+{%- endautoescape -%}

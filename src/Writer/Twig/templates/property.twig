@@ -1,11 +1,13 @@
-{{- include('documentation.twig', { 'documentation': property.getDocumentation() }, with_context = false) -}}
-{{- include('visibility.twig', { 'visibility': property.getVisibility() }, with_context = false) -}}
-{%- if property.getType() -%}
-    {{- ' ' ~ property.getType() | alias -}}
-{%- endif -%}
-{{- ' $' ~ property.getName() | normalize -}}
-{%- if property.getValue() -%}
-    {{- ' = ' -}}
-    {{- include('expression.twig', { 'expression': property.getValue() }, with_context = false) | raw -}}
-{%- endif -%}
-{{- ";\n" -}}
+{%- autoescape false -%}
+    {{- include('documentation.twig', { 'documentation': property.getDocumentation() }, with_context = false) -}}
+    {{- include('visibility.twig', { 'visibility': property.getVisibility() }, with_context = false) -}}
+    {%- if property.getType() -%}
+        {{- ' ' ~ property.getType() | alias -}}
+    {%- endif -%}
+    {{- ' $' ~ property.getName() | normalize -}}
+    {%- if property.getValue() -%}
+        {{- ' = ' -}}
+        {{- include('expression.twig', { 'expression': property.getValue() }, with_context = false) -}}
+    {%- endif -%}
+    {{- ";\n" -}}
+{%- endautoescape -%}
