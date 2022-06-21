@@ -78,7 +78,7 @@ EOF;
     ];
     $expression = new Expression(new Code('php', var_export($array, TRUE)));
     $method = new Method('test', $manager);
-    $method->setvalue($expression);
+    $method->setValue($expression);
 
     $expected = <<<EOF
 
