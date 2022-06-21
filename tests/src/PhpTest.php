@@ -22,6 +22,9 @@ class PhpTest extends TestCase {
     $this->assertEquals('1.0', Php::export(1.0));
     $this->assertEquals('[]', Php::export([]));
 
+    $this->assertEquals("'\w'", Php::export("\\w"));
+    $this->assertEquals("'\''", Php::export('\''));
+
     $array = ['name' => 'foo'];
     $this->assertEquals("[\n  'name' => 'foo',\n]", Php::export($array));
     $array = [['name' => 'foo']];

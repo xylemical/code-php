@@ -33,6 +33,9 @@ class Php {
       }
       return '[]';
     }
+    elseif (is_string($value)) {
+      return str_replace('\\\\', '\\', var_export($value, TRUE));
+    }
     return var_export($value, TRUE);
   }
 
