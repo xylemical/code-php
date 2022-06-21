@@ -44,15 +44,16 @@ class PhpTwigExtension extends AbstractExtension {
    *   The import names.
    */
   public function doImports(File $file): array {
-    $local = [
-      'array' => TRUE,
-      'string' => TRUE,
-      'int' => TRUE,
-      'float' => TRUE,
-      'bool' => TRUE,
-      'mixed' => TRUE,
-      'object' => TRUE,
+    $types = [
+      'array',
+      'string',
+      'int',
+      'float',
+      'bool',
+      'mixed',
+      'object',
     ];
+    $local = [];
     $remote = [];
 
     // Separate into local names (same namespace) and imports.
@@ -61,7 +62,7 @@ class PhpTwigExtension extends AbstractExtension {
       if ($namespace == $name->getNamespace()) {
         $local[$name->getName()] = TRUE;
       }
-      elseif (!isset($local[$name->getName()])) {
+      elseif (!in_array($name->getName(), $types)) {
         $remote[] = $name;
       }
     }
